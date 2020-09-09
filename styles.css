@@ -38,7 +38,8 @@ body {
   text-decoration: none;
 }
 .big-header nav li a:hover {
-  color: #00c0f3;
+  color: #00c0f3 ;
+  transition: color 0.2s ease-in-out;
 }
 .small-header {
   display: none;
