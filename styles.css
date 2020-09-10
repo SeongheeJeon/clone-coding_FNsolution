@@ -6,7 +6,7 @@ body {
     width: 100%; height: 754px; background-size: 100%;} */
 .top {
   width: 100%;
-  height: 754px;
+  height: 710px;
 }
 .top header {
   position: relative;
@@ -45,6 +45,8 @@ body {
   display: none;
   background-color: white;
   height: 90px;
+  width: 100%;
+  position: absolute;
 }
 .small-header .menu-dot {
   float: right;
@@ -71,6 +73,7 @@ header .small-nav {
   position: absolute;
   width: 100%;
   height: 385px;
+  top: 90px;
   background-color: white;
   z-index: 99;
   display: none;
@@ -106,7 +109,7 @@ header .small-nav a:before {
 .visual {
   position: relative;
   width: 92%;
-  height: 574px;
+  height: 530px;
   color: #ffffff;
   padding: 0 0 0 8%;
   top: 180px;
@@ -200,7 +203,7 @@ header .small-nav a:before {
 }
 .top .slider .slide {
   width: 100%;
-  height: 754px;
+  height: 710px;
   top: 0;
   z-index: -2;
   position: absolute;
@@ -209,7 +212,7 @@ header .small-nav a:before {
 }
 .top .slide img {
   width: 100%;
-  height: 754px;
+  height: 710px;
 }
 .top .slider .showing {
   z-index: -1;
@@ -361,7 +364,7 @@ footer .right {
 
 @media (max-width: 1300px) {
   .top {
-    background-size: 1300px 754px;
+    background-size: 1300px 710px;
     background-position: center;
   }
 }
