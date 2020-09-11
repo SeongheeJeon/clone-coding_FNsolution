@@ -123,8 +123,26 @@ header .small-nav a:before {
   height: 98px;
   top: 30%;
   color: transparent;
-  z-index: 9;
 }
+.visual .move:hover img{
+  left: 61px;
+  transition: left 0.2s ease-in-out
+}
+
+.visual a{
+  z-index: 99;
+}
+.visual img{
+  z-index: unset;
+}
+.visual .move img{
+  left: -39px;
+  transition: left 0.2s ease-in-out;
+  position: absolute;
+  width: 100px;
+  height: 98px;
+}
+
 .visual .prev {
   background: url("./image/prev-page.png") no-repeat;
   left: 0;
@@ -272,9 +290,9 @@ header .small-nav a:before {
 }
 .mng-philo div {
   display: inline-block;
-  width: 480px;
+  width: 35%;
   height: 300px;
-  padding: 200px 200px 200px 110px;
+  padding: 200px 13% 200px 7%;
   text-align: justify;
 }
 .mng-philo h2:after {
@@ -302,8 +320,8 @@ header .small-nav a:before {
   font-weight: 400;
 }
 .mng-philo img {
-  width: 600px;
-  height: 600px;
+  width: 40%;
+  height: 70%;
   position: absolute;
   top: 100px;
   right: 100px;
@@ -334,6 +352,7 @@ footer {
   color: white;
   font-family: "Nanum Gothic";
   height: 194px;
+  display: flow-root;
 }
 footer .logo {
   width: 300px;
@@ -343,14 +362,13 @@ footer .logo {
 footer img {
   width: 300px;
   height: 70px;
-  margin: 40px 23% 0 150px;
+  margin: 40px 10% 0 10%;
 }
 footer div {
-  display: inline-block;
-  position: absolute;
-  padding: 30px 0 0 20px;
+  float: right;
+  padding: 30px 200px 0 0;
   font-weight: 400;
-  line-height: 26cpx;
+  line-height: 26px;
 }
 footer a {
   font-size: 13px;
@@ -362,12 +380,15 @@ footer .right {
   color: #aaaaaa;
 }
 
+
+
 @media (max-width: 1300px) {
   .top {
     background-size: 1300px 710px;
     background-position: center;
   }
 }
+
 @media (max-width: 1100px) {
   header .big-header {
     display: none;
@@ -375,7 +396,12 @@ footer .right {
   header .small-header {
     display: block;
   }
+  footer {
+
+    text-align: center;
+  }
 }
+
 @media (min-width: 1101px) and (max-width: 1270px) {
   header .small-nav {
     display: none;

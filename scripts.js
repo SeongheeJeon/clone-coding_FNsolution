@@ -1,5 +1,11 @@
 const SHOWING_CLASS = "showing";
-const firstSlide = document.querySelector(".slide:first-child");
+const firstSlide = document.querySelector(".slide:first-child"),
+    lastSlide = document.querySelector(".slide:last-child"),
+    pageNumber = document.querySelector(".present-page");
+
+function updatePageNumber(currentSlide){
+    pageNumber.innerHTML = currentSlide.id;
+}
 
 function slide(){
     const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
@@ -8,13 +14,17 @@ function slide(){
         const nextSlide = currentSlide.nextElementSibling;
         if(nextSlide){
             nextSlide.classList.add(SHOWING_CLASS);
+            updatePageNumber(nextSlide);
         } else {
             firstSlide.classList.add(SHOWING_CLASS);
+            updatePageNumber(firstSlide);
         }
     } else {
         firstSlide.classList.add(SHOWING_CLASS);
+        updatePageNumber(firstSlide);
     }
 }
+
 
 function open_small_menu(){
     console.log('hello');
@@ -24,7 +34,7 @@ function open_small_menu(){
 }
 
 slide();
-setInterval(slide, 3000);  
+let slideInterval = setInterval(slide, 3000);  
 
 // 햄버거 메뉴 toggle
 $(function() {
