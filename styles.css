@@ -237,51 +237,53 @@ header .small-nav a:before {
   opacity: 1;
 }
 
-.goal {
-  height: 330px;
-  text-align: center;
+
+/* goal part ver2 */
+
+section.goal {
+  margin: 20px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* justify-items랑 차이는? */
 }
-.goal div {
+section.goal div {
   position: relative;
   width: 280px;
   height: 240px;
-  font-family: "Nanum Gothic";
-  display: inline-block;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin: 15px 15px 0 15px;
+  justify-content: space-around;
+  align-items: center;
+  
 }
-.goal img {
-  position: relative;
-  top: 18%;
+section.goal div img {
+  display: block;
+  margin-top: 30px;
+
 }
-.goal .num {
+section.goal div .num {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 130px;
   font-family: "Merriweather";
   color: #f6f6f6;
   z-index: -1;
+  top: 0;
 }
-.goal .num-kor {
-  position: absolute;
+section.goal div .num-kor {
+  display: block;
   font-size: 19px;
-  top: 50%;
-  left: 45%;
   font-weight: 700;
+
 }
-/* .goal p:nth-child(3) { position: absolute; top: 70%; left: 50%; transform: translateX(-50%); padding: 0; margin: 0; 
-    font-weight: 400; line-height: 27px; font-size: 15px; } */
-.goal p {
-  width: 280px;
-  position: absolute;
-  bottom: 10px;
-  padding: 0;
-  margin: 0;
+section.goal div p {
   font-weight: 400;
   line-height: 27px;
   font-size: 15px;
 }
+
+/* mng-philo part */
 
 .mng-philo {
   height: 800px;
@@ -380,7 +382,7 @@ footer .right {
   color: #aaaaaa;
 }
 
-
+/* 반응형 구현 */
 
 @media (max-width: 1300px) {
   .top {
@@ -408,13 +410,3 @@ footer .right {
   }
 }
 
-@media (min-width: 641px) and (max-width: 1270px) {
-  .goal {
-    height: 580px;
-  }
-}
-@media (max-width: 640px) {
-  .goal {
-    height: 1080px;
-  }
-}
