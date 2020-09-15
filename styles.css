@@ -106,16 +106,21 @@ header .small-nav a:before {
   content: "\279C";
   color: grey;
 }
-.visual {
+
+
+/* .top .main part */
+
+
+.main {
   position: relative;
-  width: 92%;
+  /* width: 92%; */
   height: 530px;
   color: #ffffff;
   padding: 0 0 0 8%;
   top: 180px;
   font-family: "nanum gothic";
 }
-.visual .move {
+.main .move {
   display: block;
   position: absolute;
   transform: translateY(-50%);
@@ -124,18 +129,18 @@ header .small-nav a:before {
   top: 30%;
   color: transparent;
 }
-.visual .move:hover img{
+.main .move:hover img{
   left: 61px;
   transition: left 0.2s ease-in-out
 }
 
-.visual a{
+.main a{
   z-index: 99;
 }
-.visual img{
+.main img{
   z-index: unset;
 }
-.visual .move img{
+.main .move img{
   left: -39px;
   transition: left 0.2s ease-in-out;
   position: absolute;
@@ -143,19 +148,19 @@ header .small-nav a:before {
   height: 98px;
 }
 
-.visual .prev {
+.main .prev {
   background: url("./image/prev-page.png") no-repeat;
   left: 0;
 }
-.visual .next {
+.main .next {
   background: url("./image/next-page.png") no-repeat;
   right: 0;
 }
-.visual .contents {
-  display: inline-block;
-  width: 530px;
+.main .contents {
+  display: flex;
+  flex-flow: column wrap;
 }
-.visual h1 {
+.main h1 {
   position: relative;
   font-family: montserrat;
   font-size: 1rem;
@@ -164,7 +169,7 @@ header .small-nav a:before {
   margin: 0;
   letter-spacing: 1px;
 }
-.visual h1:after {
+.main h1:after {
   content: "";
   background-color: #16c1f3;
   position: absolute;
@@ -173,42 +178,46 @@ header .small-nav a:before {
   width: 55px;
   height: 2px;
 }
-.visual h2 {
+.main h2 {
   font-weight: 800;
   font-size: 3rem;
   padding: 30px 0;
 }
-.visual p {
+.main p {
   font-size: 20px;
   line-height: 38px;
+  width: 530px;;
+  text-overflow: clip;
+  /* flex-basis: 530px; */
 }
-.visual a.more {
+.main a.more {
+  width: 110px;
   text-decoration: none;
   color: #ffffff;
   font-size: 13px;
   border: solid white 1px;
   padding: 20px 20px 22px 30px;
-  position: absolute;
-  bottom: 40%;
-  margin: 0;
+  /* position: absolute; */
+  /* bottom: 40%; */
+  margin-top: 20px;
   font-weight: 700;
 }
-.visual .arrow {
+.main .arrow {
   padding: 0 0 0 15px;
   margin: 0;
 }
-.visual .arrow::before {
+.main .arrow::before {
   content: "\2794";
   font-size: 13px;
 }
-.visual .page {
+.main .page {
   position: absolute;
   bottom: 30px;
   left: 47%;
   font-size: 30px;
   font-family: "Montserrat";
 }
-.visual .present-page {
+.main .present-page {
   color: #16c1f3;
 }
 
@@ -283,18 +292,24 @@ section.goal div p {
   font-size: 15px;
 }
 
+
 /* mng-philo part */
 
+
 .mng-philo {
-  height: 800px;
   background-color: #f8f8f8;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 .mng-philo div {
-  display: inline-block;
-  width: 35%;
-  height: 300px;
-  padding: 200px 13% 200px 7%;
+  width: 520px;
+  height: 400px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  margin: 40px;
   text-align: justify;
 }
 .mng-philo h2:after {
@@ -322,11 +337,8 @@ section.goal div p {
   font-weight: 400;
 }
 .mng-philo img {
-  width: 40%;
-  height: 70%;
-  position: absolute;
-  top: 100px;
-  right: 100px;
+  height: 40vw;
+  margin: 100px 40px;
 }
 .mng-philo a {
   text-decoration: none;
@@ -334,41 +346,44 @@ section.goal div p {
   font-size: 13px;
   border: solid #02438b 1px;
   padding: 20px 20px 22px 30px;
-  position: absolute;
+  width: 120px;
   bottom: 25%;
-  margin: 0;
   font-weight: 700;
 }
 .mng-philo .arrow {
   padding: 0 0 0 15px;
-  margin: 0;
 }
 .mng-philo .arrow::before {
   content: "\2794";
   font-size: 13px;
 }
 
+
+/* footer part */
+
+
 footer {
   background-color: #081a3f;
   font-size: 14px;
   color: white;
   font-family: "Nanum Gothic";
-  height: 194px;
-  display: flow-root;
+  display: flex;
+  align-items: center;
 }
 footer .logo {
   width: 300px;
   height: 70px;
   font-size: 0;
+  margin:30px 25% 30px 100px;
 }
-footer img {
+footer .logo img {
   width: 300px;
   height: 70px;
-  margin: 40px 10% 0 10%;
+  /* margin: 40px 10% 0 10%; */
 }
-footer div {
-  float: right;
-  padding: 30px 200px 0 0;
+footer .contents {
+  padding: 20px 50px;
+  right: 20px;
   font-weight: 400;
   line-height: 26px;
 }
@@ -398,15 +413,40 @@ footer .right {
   header .small-header {
     display: block;
   }
-  footer {
-
-    text-align: center;
+  .mng-philo img {
+    width: 440px;
+    height: 440px;
   }
 }
-
+@media (max-width: 1160px){
+  .mng-philo img {
+    margin: 3.44% 50px 5% 50px;
+  }
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  footer .logo {
+    margin: 30px 25% 30px 25%;;
+  }
+}
 @media (min-width: 1101px) and (max-width: 1270px) {
   header .small-nav {
     display: none;
   }
 }
-
+@media (max-width: 970px){
+  .main {
+    padding-left: 76.35px;
+  }
+}
+@media  (max-width: 700px){
+  .main .contents p {
+    width: 80%;
+  }
+  .mng-philo img {
+    width: 62.85%;
+    height: 62.85%;
+  }
+}
