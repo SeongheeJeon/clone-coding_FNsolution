@@ -116,11 +116,11 @@ header .small-nav a:before {
   /* width: 92%; */
   height: 530px;
   color: #ffffff;
-  padding: 0 0 0 8%;
+  padding: 0 0 0 12%;
   top: 180px;
   font-family: "nanum gothic";
 }
-.main .move {
+.main a.move {
   display: block;
   position: absolute;
   transform: translateY(-50%);
@@ -129,36 +129,55 @@ header .small-nav a:before {
   top: 30%;
   color: transparent;
 }
-.main .move:hover img{
-  left: 61px;
-  transition: left 0.2s ease-in-out
-}
-
-.main a{
-  z-index: 99;
-}
-.main img{
-  z-index: unset;
-}
-.main .move img{
-  left: -39px;
-  transition: left 0.2s ease-in-out;
-  position: absolute;
-  width: 100px;
-  height: 98px;
-}
-
-.main .prev {
-  background: url("./image/prev-page.png") no-repeat;
+.main a.move.prev {
   left: 0;
 }
-.main .next {
-  background: url("./image/next-page.png") no-repeat;
+.main .move.prev:hover > .slideImg {
+  left: 61px;
+  width: 100px;
+  transition:  0.2s ease-in-out;
+
+}
+.main a.move.next {
   right: 0;
+
+}
+.main .move.next:hover > .slideImg {
+  right: 61px;
+  width: 100px;
+  transition:  0.2s ease-in-out;
+}
+
+/* .main a{
+  z-index: 99;
+} */
+
+.main .move .slideImg {
+  position: absolute;
+  width: 61px;
+  height: 98px;
+  z-index: -1;
+}
+.main .move.prev .slideImg {
+  left: -39px;
+  transition:  0.2s ease-in-out;
+}
+.main .move.next .slideImg {
+  right: 0;
+  transition:  0.2s ease-in-out;
+  overflow-x: hidden;
 }
 .main .contents {
   display: flex;
   flex-flow: column wrap;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: -2;
+}
+.main .contents.showing {
+  opacity: 1;
+  z-index: 4;
 }
 .main h1 {
   position: relative;
